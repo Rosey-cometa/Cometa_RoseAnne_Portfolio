@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rose Anne - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sansation" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="projects-features.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Background Effects Layer -->
+    <!-- Layer 0: Floating Circles (Deepest Background) -->
+    <div id="circles-container" class="background-layer circles-layer"></div>
+
+    <!-- Layer 1: Decorative Roses -->
+    <div class="background-layer roses-layer">
+      <svg class="rose rose-1" viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="40" fill="#ff6e8a" opacity="0.15" />
+        <circle cx="100" cy="100" r="30" fill="#ffb7c5" opacity="0.2" />
+        <circle cx="100" cy="100" r="20" fill="#ff6e8a" opacity="0.25" />
+        <path d="M100 80 Q110 85 110 95 T100 110 T90 95 T100 80" fill="#ff6e8a" opacity="0.3" />
+        <path d="M80 100 Q85 110 95 110 T110 100 T95 90 T80 100" fill="#ffb7c5" opacity="0.25" />
+      </svg>
+      <svg class="rose rose-2" viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="35" fill="#ffbaba" opacity="0.12" />
+        <circle cx="100" cy="100" r="25" fill="#ff6e8a" opacity="0.18" />
+        <circle cx="100" cy="100" r="15" fill="#ffb7c5" opacity="0.22" />
+        <path d="M100 85 Q105 88 105 93 T100 103 T95 93 T100 85" fill="#ff6e8a" opacity="0.28" />
+      </svg>
+      <svg class="rose rose-3" viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="45" fill="#ff6e8a" opacity="0.1" />
+        <circle cx="100" cy="100" r="35" fill="#ffbaba" opacity="0.15" />
+        <circle cx="100" cy="100" r="25" fill="#ffb7c5" opacity="0.2" />
+        <path d="M100 75 Q115 82 115 95 T100 115 T85 95 T100 75" fill="#ff6e8a" opacity="0.25" />
+        <path d="M75 100 Q82 115 95 115 T115 100 T95 85 T75 100" fill="#ffbaba" opacity="0.2" />
+      </svg>
+      <svg class="rose rose-4" viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="30" fill="#ffb7c5" opacity="0.18" />
+        <circle cx="100" cy="100" r="20" fill="#ff6e8a" opacity="0.22" />
+        <circle cx="100" cy="100" r="12" fill="#ffbaba" opacity="0.28" />
+      </svg>
+      <svg class="rose rose-5" viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="50" fill="#ffbaba" opacity="0.08" />
+        <circle cx="100" cy="100" r="38" fill="#ff6e8a" opacity="0.12" />
+        <circle cx="100" cy="100" r="28" fill="#ffb7c5" opacity="0.16" />
+        <path d="M100 70 Q120 80 120 95 T100 120 T80 95 T100 70" fill="#ff6e8a" opacity="0.2" />
+      </svg>
+      <svg class="rose rose-6" viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="32" fill="#ff6e8a" opacity="0.14" />
+        <circle cx="100" cy="100" r="22" fill="#ffbaba" opacity="0.19" />
+        <circle cx="100" cy="100" r="14" fill="#ffb7c5" opacity="0.24" />
+      </svg>
+    </div>
+
+    <!-- Layer 2: Glowing Particles -->
+    <div id="particles-container" class="background-layer particles-layer"></div>
+
+    <!-- Layer 3: Floating Petals -->
+    <div id="petals-container" class="background-layer petals-layer"></div>
+
+    <!-- Animated Heart on Home Section -->
+    <div id="animated-heart-wrapper">
+      <div class="brush-heart-container brush-heart-left">
+        <svg class="brush-heart-svg" viewBox="0 0 600 700" fill="none" preserveAspectRatio="xMidYMid meet">
+          <path class="heart-brush-outer-glow" d="M 150 220 Q 150 120, 230 120 Q 300 120, 330 180 Q 360 120, 430 120 Q 510 120, 510 220 Q 510 360, 330 550 Q 150 360, 150 220 Z" stroke="url(#outerGlowGradient)" stroke-width="35" stroke-linecap="round" stroke-linejoin="round" />
+          <path class="heart-brush-main" d="M 150 220 Q 150 120, 230 120 Q 300 120, 330 180 Q 360 120, 430 120 Q 510 120, 510 220 Q 510 360, 330 550 Q 150 360, 150 220 Z" stroke="url(#brushGradient)" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" />
+          <path class="heart-brush-highlight" d="M 150 220 Q 150 120, 230 120 Q 300 120, 330 180 Q 360 120, 430 120 Q 510 120, 510 220 Q 510 360, 330 550 Q 150 360, 150 220 Z" stroke="url(#highlightGradient)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+          <defs>
+            <linearGradient id="brushGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#dc143c" />
+              <stop offset="50%" stop-color="#ff6e8a" />
+              <stop offset="100%" stop-color="#ff1744" />
+            </linearGradient>
+            <linearGradient id="outerGlowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(220, 20, 60, 0.5)" />
+              <stop offset="50%" stop-color="rgba(255, 110, 138, 0.7)" />
+              <stop offset="100%" stop-color="rgba(255, 23, 68, 0.5)" />
+            </linearGradient>
+            <linearGradient id="highlightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(255, 183, 197, 1)" />
+              <stop offset="50%" stop-color="rgba(255, 255, 255, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 183, 197, 1)" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="brush-heart-container brush-heart-right">
+        <svg class="brush-heart-svg" viewBox="0 0 600 700" fill="none" preserveAspectRatio="xMidYMid meet">
+          <path class="heart-brush-outer-glow-2" d="M 150 220 Q 150 120, 230 120 Q 300 120, 330 180 Q 360 120, 430 120 Q 510 120, 510 220 Q 510 360, 330 550 Q 150 360, 150 220 Z" stroke="url(#outerGlowGradient2)" stroke-width="35" stroke-linecap="round" stroke-linejoin="round" />
+          <path class="heart-brush-main-2" d="M 150 220 Q 150 120, 230 120 Q 300 120, 330 180 Q 360 120, 430 120 Q 510 120, 510 220 Q 510 360, 330 550 Q 150 360, 150 220 Z" stroke="url(#brushGradient2)" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" />
+          <path class="heart-brush-highlight-2" d="M 150 220 Q 150 120, 230 120 Q 300 120, 330 180 Q 360 120, 430 120 Q 510 120, 510 220 Q 510 360, 330 550 Q 150 360, 150 220 Z" stroke="url(#highlightGradient2)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+          <defs>
+            <linearGradient id="brushGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#dc143c" />
+              <stop offset="50%" stop-color="#ff6e8a" />
+              <stop offset="100%" stop-color="#ff1744" />
+            </linearGradient>
+            <linearGradient id="outerGlowGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(220, 20, 60, 0.5)" />
+              <stop offset="50%" stop-color="rgba(255, 110, 138, 0.7)" />
+              <stop offset="100%" stop-color="rgba(255, 23, 68, 0.5)" />
+            </linearGradient>
+            <linearGradient id="highlightGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(255, 183, 197, 1)" />
+              <stop offset="50%" stop-color="rgba(255, 255, 255, 0.9)" />
+              <stop offset="100%" stop-color="rgba(255, 183, 197, 1)" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Enhanced Navigation -->
+    <nav id="navbar" class="navbar-anim">
+      <div class="navbar-inner">
+        <div class="nav-links">
+          <button data-target="home">HOME</button>
+          <button data-target="about">ABOUT ME</button>
+          <button data-target="projects">GALLERY</button>
+          <button data-target="services">SERVICES</button>
+          <button data-target="education">EDUCATION</button>
+          <button data-target="testimonials">TESTIMONIALS</button>
+          <button data-target="contact">CONTACT</button>
+        </div>
+        
+      </div>
+    
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section z-10">
+      <div class="hero-bg-wrapper">
+        <svg class="hero-bg-svg" fill="none" preserveAspectRatio="none" viewBox="0 0 1651 6313">
+          <path d="M0 0H1651V6313H0V0Z" fill="url(#paint0_radial_1_420)" />
+          <defs>
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(-843.832 -4075.94 725.599 -4740.1 1011.81 3879.95)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_420" r="1">
+              <stop offset="0.475962" stop-color="#FFFAE8" stop-opacity="0.79" />
+              <stop offset="0.913462" stop-color="#FFE3EB" stop-opacity="0.6" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-text-col fade-in-left">
+          <p class="greeting">HI, I am</p>
+          <h1 class="name-title">ROSE ANNE</h1>
+          <p class="hero-tagline">Computer Engineering Technology Student · Builder of Smart Solutions</p>
+          <p class="description">
+            A passionate creative professional dedicated to bringing ideas to life through
+            beautiful design and innovative solutions. With expertise spanning multiple
+            disciplines, I transform concepts into compelling visual experiences that
+            resonate with audiences and drive meaningful results.
+          </p>
+          <div class="btn-group">
+            <button class="btn-primary" data-target="projects">VIEW MY WORK</button>
+            <button class="btn-secondary" data-target="contact">CONTACT ME</button>
+          </div>
+        </div>
+
+        <div class="hero-image-col zoom-in-delay">
+          <div class="photo-holder hero-photo-holder">
+            <img src="../static/person.png" alt="Rose Anne" class="hero-portrait">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section z-10">
+      <div class="about-bg-blur"></div>
+      <div class="section-container">
+        <h2 class="section-title slide-up">ABOUT ME</h2>
+        <p class="about-intro slide-up">
+          I am a motivated and dedicated student currently pursuing a Bachelor of Computer
+          Engineering Technology. I am committed to improving my academic knowledge,
+          technical skills, and personal development. I value responsibility, discipline,
+          and professionalism, and I aim to use my abilities to contribute positively in
+          both academic and professional environments.
+        </p>
+
+        <div class="about-grid about-grid-3">
+          <div class="about-card fade-in-left">
+            <h3>Experience</h3>
+            <ul>
+              <li><span class="dot"></span>Completed a student teaching internship at Balete Relocation Site Elementary School</li>
+              <li><span class="dot"></span>Worked on academic projects in engineering, circuits, and web development</li>
+              <li><span class="dot"></span>Developed stronger communication, leadership, and teamwork skills</li>
+            </ul>
+          </div>
+
+          <div class="about-card fade-in-right">
+            <h3>Hobbies</h3>
+            <ul>
+              <li><span class="dot"></span>Reading online stories</li>
+              <li><span class="dot"></span>Singing</li>
+              <li><span class="dot"></span>Watching pageantry</li>
+            </ul>
+          </div>
+
+          <div class="about-card fade-in-up skills-container">
+            <h3>Skills</h3>
+            <ul>
+              <li><span class="dot"></span>Public speaking</li>
+              <li><span class="dot"></span>Makeup artistry and hairstyling</li>
+              <li><span class="dot"></span>Python</li>
+              <li><span class="dot"></span>C++</li>
+              <li><span class="dot"></span>Basic networking configuration</li>
+              <li><span class="dot"></span>Basic computer literacy</li>
+              <li><span class="dot"></span>Creating satin flower bouquets</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section (Swiper) -->
+    <section id="projects" class="projects-section z-10">
+      <div class="projects-bg-blur"></div>
+      <div class="section-container">
+        <h2 class="section-title-light slide-up">MY PROJECTS</h2>
+        
+        <div class="box slide-up">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+
+              <div class="card-item swiper-slide" data-project-id="1">
+                <div class="image-wrapper">
+                  <img src="../static/smart1.jpeg" alt="Smart Waste Management" class="image1">
+                </div>
+                <h2 class="P1">Smart Waste Management System</h2>
+                <p class="description">Smart bin with sensors to monitor trash and improve waste segregation.</p>
+              </div>
+
+              <div class="card-item swiper-slide" data-project-id="2">
+                <div class="image-wrapper">
+                  <img src="../static/gas.jpg" alt="Gas Leak Detection" class="image1">
+                </div>
+                <h2 class="P1">Smart Gas Leak Detection and Safety System</h2>
+                <p class="description">Smart detector for smoke and gas leaks with safety alerts.</p>
+              </div>
+
+              <div class="card-item swiper-slide" data-project-id="3">
+                <div class="image-wrapper">
+                  <img src="../static/bats.jpeg" alt="Batangas Tourist Spots" class="image1">
+                </div>
+                <h2 class="P1">Travel Blog Website: Batangas Tourist Spots</h2>
+                <p class="description">Travel blog showcasing famous tourist spots in Batangas.</p>
+              </div>
+
+              <div class="card-item swiper-slide" data-project-id="4">
+                <div class="image-wrapper">
+                  <img src="../static/japan.jpeg" alt="Explore Japan" class="image1">
+                </div>
+                <h2 class="P1">Travel Blog Website: Explore Japan</h2>
+                <p class="description">Tourism site highlighting Japan's attractions, culture, and travel.</p>
+              </div>
+
+              <div class="card-item swiper-slide" data-project-id="5">
+                <div class="image-wrapper">
+                  <img src="../static/smart1.jpeg" alt="Event Management Dashboard" class="image1">
+                </div>
+                <h2 class="P1">Event Management Dashboard</h2>
+                <p class="description">Dashboard for planning events, tracking tasks, and coordinating teams.</p>
+              </div>
+
+              <div class="card-item swiper-slide" data-project-id="6">
+                <div class="image-wrapper">
+                  <img src="../static/japan.jpeg" alt="Online Store" class="image1">
+                </div>
+                <h2 class="P1">Online Store</h2>
+                <p class="description">E-commerce storefront with browsing, cart, and checkout.</p>
+              </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section z-10">
+      <div class="services-bg-blur"></div>
+      <div class="section-container">
+        <h2 class="section-title-light slide-up">SERVICES</h2>
+
+        <div class="services-grid">
+          <div class="service-card slide-up-delay-0 hover-lift">
+            <h3>Design</h3>
+            <p>Creating beautiful, intuitive interfaces that users love to interact with.</p>
+          </div>
+          <div class="service-card slide-up-delay-1 hover-lift">
+            <h3>Development</h3>
+            <p>Building robust, scalable solutions with modern technologies and best practices.</p>
+          </div>
+          <div class="service-card slide-up-delay-2 hover-lift">
+            <h3>Consulting</h3>
+            <p>Providing strategic guidance to help businesses achieve their digital goals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Experience Section -->
+    <section id="education" class="education-section z-10">
+      <div class="education-bg-blur"></div>
+      <div class="section-container">
+        <h2 class="section-title-pink slide-up">EDUCATION & EXPERIENCE</h2>
+
+        <div class="timeline">
+
+          <div class="timeline-item slide-up-delay-0">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2024 - Present</div>
+              <h3 class="timeline-title">Bachelor of Computer Engineering Technology</h3>
+              <div class="timeline-subtitle-text">Batangas State University - The NEU</div>
+              <p class="timeline-description">
+                Currently in 2nd year, focusing on computer systems, programming,
+                circuit design, and embedded systems. Maintaining strong academic
+                performance while actively participating in engineering projects.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item slide-up-delay-1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2022 - 2024</div>
+              <h3 class="timeline-title">Senior High School - STEM</h3>
+              <div class="timeline-subtitle-text">Alangilan Senior High School</div>
+              <p class="timeline-description">
+                Completed STEM strand with focus on Mathematics, Science, Technology, and
+                Engineering. Developed better critical thinking and basic programming.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item slide-up-delay-2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2024</div>
+              <h3 class="timeline-title">Student Teacher Intern</h3>
+              <div class="timeline-subtitle-text">Balete Relocation Site Elementary School</div>
+              <p class="timeline-description">
+                Gained experience assisting teachers, guiding students, and managing classroom activities.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item slide-up-delay-0">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2018 - 2022</div>
+              <h3 class="timeline-title">Junior High School</h3>
+              <div class="timeline-subtitle-text">Natalia Velasquez Ramos Integrated High School</div>
+              <p class="timeline-description">
+                Built leadership, communication, and academic skills while engaging in school activities.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item slide-up-delay-1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-year">2012 - 2018</div>
+              <h3 class="timeline-title">Elementary</h3>
+              <div class="timeline-subtitle-text">Padre Imo Luna Memorial Elementary School</div>
+              <p class="timeline-description">
+                Completed foundational studies while developing discipline, curiosity, and a love for learning.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="education-awards slide-up">
+          <h3 class="education-awards-title">Awards & Recognition</h3>
+          <div class="about-card education-awards-card">
+            <ul>
+              <li><span class="dot"></span>2022 – 2024: With Honors (Senior High School)</li>
+              <li><span class="dot"></span>2020 – 2022: With Honors (Junior High School)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section z-10">
+      <div class="testimonials-bg-blur"></div>
+      <div class="section-container">
+        <h2 class="section-title-pink slide-up testimonials-heading">Testimonials</h2>
+        <div class="testimonials-strip slide-up">
+          <article class="testimonial-card">
+            <p class="testimonial-quote">"Dedicated, creative, and always willing to go the extra mile on every project."</p>
+            <p class="testimonial-source">— Academic Project Mentor</p>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-quote">"Strong communication and leadership during student teaching internship."</p>
+            <p class="testimonial-source">— Balete Relocation Site Elementary School</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section z-10">
+      <div class="contact-bg-blur"></div>
+      <div class="section-container">
+        <h2 class="section-title-light slide-up">Contact me</h2>
+
+        <div class="contact-layout">
+          <div class="contact-info-card fade-in-left">
+            <h3>Get in Touch</h3>
+            <p class="contact-desc">
+              Have a project in mind? Reach out by email, social media, or book a time to chat.
+            </p>
+            <div class="contact-details">
+              <div class="detail-item">
+                <p class="detail-label">Email</p>
+                <a class="detail-value detail-link" href="mailto:cometaroseanne@gmail.com">cometaroseanne@gmail.com</a>
+              </div>
+              <div class="detail-item">
+                <p class="detail-label">Phone</p>
+                <a class="detail-value detail-link" href="tel:+639493310526">+63 949 331 0526</a>
+              </div>
+            </div>
+            <div class="contact-social">
+              <p class="detail-label">Social Media</p>
+              <div class="social-links-row">
+                <a href="mailto:cometaroseanne@gmail.com" class="social-link" aria-label="Email">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                  Email
+                </a>
+                <a href="https://www.facebook.com/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  Facebook
+                </a>
+                <a href="https://github.com/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+            <a href="mailto:cometaroseanne@gmail.com?subject=Meeting%20Request%20with%20Rose%20Anne" class="btn-secondary contact-book-btn">Book a Meeting</a>
+          </div>
+
+          <div class="contact-image-col zoom-in">
+            <div class="photo-holder contact-photo-holder">
+              <img src="../static/person.png" alt="Rose Anne" class="contact-portrait">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="main.js"></script>
+  <script src="projects-features.js"></script>
+</body>
+</html>
