@@ -2,17 +2,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- Background Effects Generation ---
   
-  // Generate Petals (25)
+  // Generate Petals (stronger effect)
   const petalContainer = document.getElementById("petals-container");
   if (petalContainer) {
-    for (let i = 0; i < 25; i++) {
+    // create more petals for a fuller, raining effect
+    for (let i = 0; i < 100; i++) {
       const petal = document.createElement("div");
       petal.className = "petal";
       petal.style.left = `${Math.random() * 100}%`;
-      petal.style.animationDelay = `${Math.random() * 60}s`;
-      petal.style.animationDuration = `${10 + Math.random() * 30}s`;
+      // shorter random delay so petals stream in continuously
+      const delay = (Math.random() * 12).toFixed(2);
+      const duration = (10 + Math.random() * 26).toFixed(2);
+      petal.style.animationDelay = `${delay}s`;
+      petal.style.animationDuration = `${duration}s`;
+      // expose CSS var for duration if needed
+      petal.style.setProperty('--fall-duration', `${duration}s`);
+      // slight size variance
+      const size = 10 + Math.floor(Math.random() * 25);
+      petal.style.width = `${size}px`;
+      petal.style.height = `${Math.round(size * 1.4)}px`;
+      // petal type (0-2) matches CSS variants
       const petalType = Math.floor(Math.random() * 3);
       petal.setAttribute('data-type', petalType.toString());
+      // randomize opacity so some petals appear darker/stronger
+      const petalOpacity = (15 + Math.random() * 100).toFixed(2); // 0.50 - 1.00
+      petal.style.setProperty('--petal-max-opacity', petalOpacity);
+      // mark especially visible petals for stronger shadow/highlight
+      if (Number(petalOpacity) > 100) {
+        petal.classList.add('petal-strong');
+        petal.style.zIndex = 50;
+      }
       petalContainer.appendChild(petal);
     }
   }
@@ -153,6 +172,27 @@ document.addEventListener('DOMContentLoaded', () => {
   animatableElements.forEach(el => {
     scrollObserver.observe(el);
   });
+
+  // When a section becomes visible, fade-in the petals layer for that "page".
+  const sections = document.querySelectorAll('section');
+  if (petalContainer && sections.length) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.25) {
+          petalContainer.classList.add('active');
+        } else if (!entry.isIntersecting) {
+          // remove active when no section is prominently visible (small delay to avoid flicker)
+          setTimeout(() => {
+            // if no section currently has is-visible, hide petals
+            const anyVisible = Array.from(sections).some(s => s.classList.contains('is-visible'));
+            if (!anyVisible) petalContainer.classList.remove('active');
+          }, 250);
+        }
+      });
+    }, { threshold: [0.25] });
+
+    sections.forEach(s => sectionObserver.observe(s));
+  }
 
   // --- Swiper Initialization ---
   const swiperElement = document.querySelector('.swiper');
