@@ -65,18 +65,6 @@
       alt: "Explore Japan",
     },
     {
-      id: 5,
-      title: "Event Management Dashboard",
-      category: "Web Development",
-      year: "2026",
-      shortDescription:
-        "Dashboard for planning events, tracking tasks, and coordinating teams.",
-      description:
-        "An interactive dashboard for planning events, tracking tasks, and coordinating teams with ease.",
-      image: "../static/smart1.jpeg",
-      alt: "Event Management Dashboard",
-    },
-    {
       id: 6,
       title: "Online Store",
       category: "Web Development",
